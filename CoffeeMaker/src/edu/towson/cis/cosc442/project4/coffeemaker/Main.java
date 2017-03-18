@@ -1,3 +1,4 @@
+// $codepro.audit.disable variableShouldBeFinal
 package edu.towson.cis.cosc442.project4.coffeemaker;
 
 import java.io.BufferedReader;
