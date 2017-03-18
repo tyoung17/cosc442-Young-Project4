@@ -82,8 +82,12 @@ public class Main {
 		   
 		recipeAdded = coffeeMaker.addRecipe(r);
 	    
-	    if(recipeAdded) System.out.println(name + " successfully added.");
-	    else System.out.println(name + "could not be added.");
+	    if(recipeAdded) {
+			System.out.println(name + " successfully added.");
+		} 
+	    else {
+			System.out.println(name + "could not be added.");
+		}
 	    
 	    mainMenu();
     }
@@ -101,8 +105,12 @@ public class Main {
         
         boolean recipeDeleted = coffeeMaker.deleteRecipe(recipes[recipeToDelete]);
         
-        if(recipeDeleted) System.out.println(recipes[recipeToDelete].getName() + " successfully deleted.");
-	    else System.out.println(recipes[recipeToDelete].getName() + "could not be deleted.");
+        if(recipeDeleted) {
+			System.out.println(recipes[recipeToDelete].getName() + " successfully deleted.");
+		} 
+        else {
+			System.out.println(recipes[recipeToDelete].getName() + "could not be deleted.");
+		}
         
         mainMenu();
     }
@@ -168,8 +176,12 @@ public class Main {
         
         boolean recipeEdited = coffeeMaker.editRecipe(oldRecipe, newRecipe);
         
-        if(recipeEdited) System.out.println(oldRecipe.getName() + " successfully edited.");
-	    else System.out.println(oldRecipe.getName() + "could not be edited.");
+        if(recipeEdited) {
+			System.out.println(oldRecipe.getName() + " successfully edited.");
+		} 
+        else {
+			System.out.println(oldRecipe.getName() + "could not be edited.");
+		}
         
         mainMenu();
     }
