@@ -217,6 +217,14 @@ public class Main {
 	    }
 	    
         coffeeMaker.addInventory(amtCoffee, amtMilk, amtSugar, amtChocolate);
+        
+        boolean addInventory = coffeeMaker.addInventory(amtCoffee, amtMilk, amtSugar, amtChocolate);
+        if(addInventory) {
+        	System.out.println("Inventory successfully added." + System.lineSeparator());
+        }
+        else {
+        	System.out.println("Inventory could not be added." + System.lineSeparator());
+        }
         mainMenu();
     }
     
