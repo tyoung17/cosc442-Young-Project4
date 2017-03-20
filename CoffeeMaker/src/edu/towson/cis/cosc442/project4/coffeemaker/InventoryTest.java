@@ -158,6 +158,7 @@ public class InventoryTest {
 
 		fixture.setChocolate(chocolate);
 
+		assertEquals(0, fixture.getChocolate());
 		// add additional test code here
 	}
 
@@ -176,6 +177,7 @@ public class InventoryTest {
 
 		fixture.setChocolate(chocolate);
 
+		assertEquals(1, fixture.getChocolate());
 		// add additional test code here
 	}
 
@@ -194,6 +196,7 @@ public class InventoryTest {
 
 		fixture.setCoffee(coffee);
 
+		assertEquals(0, fixture.getCoffee());
 		// add additional test code here
 	}
 
@@ -212,6 +215,7 @@ public class InventoryTest {
 
 		fixture.setCoffee(coffee);
 
+		assertEquals(1, fixture.getCoffee());
 		// add additional test code here
 	}
 
@@ -230,6 +234,7 @@ public class InventoryTest {
 
 		fixture.setMilk(milk);
 
+		assertEquals(0, fixture.getMilk());
 		// add additional test code here
 	}
 
@@ -248,6 +253,7 @@ public class InventoryTest {
 
 		fixture.setMilk(milk);
 
+		assertEquals(1, fixture.getMilk());
 		// add additional test code here
 	}
 
@@ -266,6 +272,7 @@ public class InventoryTest {
 
 		fixture.setSugar(sugar);
 
+		assertEquals(0, fixture.getSugar());
 		// add additional test code here
 	}
 
@@ -284,6 +291,7 @@ public class InventoryTest {
 
 		fixture.setSugar(sugar);
 
+		assertEquals(1, fixture.getSugar());
 		// add additional test code here
 	}
 

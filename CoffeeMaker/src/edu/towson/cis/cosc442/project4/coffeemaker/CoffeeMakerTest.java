@@ -17,10 +17,10 @@ public class CoffeeMakerTest extends TestCase {
 		r1 = new Recipe();
 		r1.setName("Coffee");
 		r1.setPrice(50);
-		r1.setAmtCoffee(6);
-		r1.setAmtMilk(1);
-		r1.setAmtSugar(1);
-		r1.setAmtChocolate(0);
+		r1.setAmtCoffee(5);
+		r1.setAmtMilk(5);
+		r1.setAmtSugar(5);
+		r1.setAmtChocolate(5);
 		
 		r2 = new Recipe();
 		r2.setName("Frappuccino");
@@ -102,7 +102,11 @@ public class CoffeeMakerTest extends TestCase {
 	}
 	
 	public void testAddInventory1() {
-		assertTrue(cm.addInventory(5, 5, 5, 5));
+		cm.addRecipe(r1);
+		cm.makeCoffee(r1, 50);
+		
+		assertTrue(cm.addInventory(3, 3, 3, 3));
+		
 	}
 	
 	public void testAddInventory2() {
