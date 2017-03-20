@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>CoffeeMakerTest.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">CoffeeMaker (Mar 19, 2017 8:59:33 PM)</a> &gt; <a href="../../index.html" class="el_group">CoffeeMaker</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">edu.towson.cis.cosc442.project4.coffeemaker</a> &gt; <span class="el_source">CoffeeMakerTest.java</span></div><h1>CoffeeMakerTest.java</h1><pre class="source lang-java linenums">package edu.towson.cis.cosc442.project4.coffeemaker;
+
+import junit.framework.TestCase;
+
+/**
+ *
+ */
+<span class="fc" id="L8">public class CoffeeMakerTest extends TestCase {</span>
+	private CoffeeMaker cm;
+	private Inventory i;
+	private Recipe r1, r2, r3, r4, r5;
+
+	public void setUp() {
+<span class="fc" id="L14">		cm = new CoffeeMaker();</span>
+<span class="fc" id="L15">		i = cm.checkInventory();</span>
+
+<span class="fc" id="L17">		r1 = new Recipe();</span>
+<span class="fc" id="L18">		r1.setName(&quot;Coffee&quot;);</span>
+<span class="fc" id="L19">		r1.setPrice(50);</span>
+<span class="fc" id="L20">		r1.setAmtCoffee(6);</span>
+<span class="fc" id="L21">		r1.setAmtMilk(1);</span>
+<span class="fc" id="L22">		r1.setAmtSugar(1);</span>
+<span class="fc" id="L23">		r1.setAmtChocolate(0);</span>
+		
+<span class="fc" id="L25">		r2 = new Recipe();</span>
+<span class="fc" id="L26">		r2.setName(&quot;Frappuccino&quot;);</span>
+<span class="fc" id="L27">		r2.setPrice(50);</span>
+<span class="fc" id="L28">		r2.setAmtCoffee(6);</span>
+<span class="fc" id="L29">		r2.setAmtMilk(1);</span>
+<span class="fc" id="L30">		r2.setAmtSugar(1);</span>
+<span class="fc" id="L31">		r2.setAmtChocolate(0);</span>
+		
+<span class="fc" id="L33">		r3 = new Recipe();</span>
+<span class="fc" id="L34">		r3.setName(&quot;Latte&quot;);</span>
+<span class="fc" id="L35">		r3.setPrice(50);</span>
+<span class="fc" id="L36">		r3.setAmtCoffee(6);</span>
+<span class="fc" id="L37">		r3.setAmtMilk(1);</span>
+<span class="fc" id="L38">		r3.setAmtSugar(1);</span>
+<span class="fc" id="L39">		r3.setAmtChocolate(0);</span>
+		
+<span class="fc" id="L41">		r4 = new Recipe();</span>
+<span class="fc" id="L42">		r4.setName(&quot;Cappuccino&quot;);</span>
+<span class="fc" id="L43">		r4.setPrice(50);</span>
+<span class="fc" id="L44">		r4.setAmtCoffee(6);</span>
+<span class="fc" id="L45">		r4.setAmtMilk(1);</span>
+<span class="fc" id="L46">		r4.setAmtSugar(1);</span>
+<span class="fc" id="L47">		r4.setAmtChocolate(0);</span>
+		
+<span class="fc" id="L49">		r5 = new Recipe();</span>
+<span class="fc" id="L50">		r5.setName(&quot;Espresso&quot;);</span>
+<span class="fc" id="L51">		r5.setPrice(50);</span>
+<span class="fc" id="L52">		r5.setAmtCoffee(16);</span>
+<span class="fc" id="L53">		r5.setAmtMilk(25);</span>
+<span class="fc" id="L54">		r5.setAmtSugar(25);</span>
+<span class="fc" id="L55">		r5.setAmtChocolate(25);</span>
+<span class="fc" id="L56">	}</span>
+
+	public void testAddRecipe1() {
+<span class="fc" id="L59">		assertTrue(cm.addRecipe(r1));</span>
+<span class="fc" id="L60">	}</span>
+	
+	public void testAddRecipe2() {
+<span class="fc" id="L63">		cm.addRecipe(r1);</span>
+<span class="fc" id="L64">		cm.addRecipe(r2);</span>
+<span class="fc" id="L65">		cm.addRecipe(r3);</span>
+<span class="fc" id="L66">		cm.addRecipe(r4);</span>
+		
+<span class="fc" id="L68">		assertFalse(cm.addRecipe(r5));</span>
+<span class="fc" id="L69">	}</span>
+	
+	public void testCheckRecipe1() {
+		
+<span class="fc" id="L73">	}</span>
+	
+	public void testDeleteRecipe1() {
+<span class="fc" id="L76">		cm.addRecipe(r1);</span>
+<span class="fc" id="L77">		assertTrue(cm.deleteRecipe(r1));</span>
+<span class="fc" id="L78">	}</span>
+	
+	public void testDeleteRecipe2() {
+<span class="fc" id="L81">		assertFalse(cm.deleteRecipe(r1));</span>
+<span class="fc" id="L82">	}</span>
+
+	public void testEditRecipe1() {
+<span class="fc" id="L85">		cm.addRecipe(r1);</span>
+<span class="fc" id="L86">		Recipe newRecipe = new Recipe();</span>
+<span class="fc" id="L87">		newRecipe = r1;</span>
+<span class="fc" id="L88">		newRecipe.setAmtSugar(2);</span>
+<span class="fc" id="L89">		assertTrue(cm.editRecipe(r1, newRecipe));</span>
+<span class="fc" id="L90">	}</span>
+	
+	public void testEditRecipe2() {
+<span class="fc" id="L93">		cm.addRecipe(r1);</span>
+<span class="fc" id="L94">		cm.addRecipe(r2);</span>
+<span class="fc" id="L95">		cm.addRecipe(r3);</span>
+<span class="fc" id="L96">		cm.addRecipe(r4);</span>
+		
+<span class="fc" id="L98">		Recipe newRecipe = new Recipe();</span>
+<span class="fc" id="L99">		newRecipe = r1;</span>
+<span class="fc" id="L100">		newRecipe.setAmtSugar(2);</span>
+<span class="fc" id="L101">		assertFalse(cm.editRecipe(r1, newRecipe));</span>
+<span class="fc" id="L102">	}</span>
+	
+	public void testAddInventory1() {
+<span class="fc" id="L105">		assertTrue(cm.addInventory(5, 5, 5, 5));</span>
+<span class="fc" id="L106">	}</span>
+	
+	public void testAddInventory2() {
+<span class="fc" id="L109">		assertFalse(cm.addInventory(-1, 5, 5, 5));</span>
+		
+<span class="fc" id="L111">	}</span>
+
+	public void testAddInventory3() {
+<span class="fc" id="L114">		assertFalse(cm.addInventory(5, -1, 5, 5));</span>
+<span class="fc" id="L115">	}</span>
+
+	public void testAddInventory4() {
+<span class="fc" id="L118">		assertFalse(cm.addInventory(5, 5, -1, 5));</span>
+<span class="fc" id="L119">	}</span>
+	
+	public void testAddInventory5() {
+<span class="fc" id="L122">		assertFalse(cm.addInventory(5, 5, 5, -1));</span>
+<span class="fc" id="L123">	}</span>
+	
+	public void testMakeCoffee1() {
+<span class="fc" id="L126">		cm.addRecipe(r1);</span>
+<span class="fc" id="L127">		assertEquals(0, cm.makeCoffee(r1, 50));</span>
+<span class="fc" id="L128">	}</span>
+	
+	public void testMakeCoffee2() {
+<span class="fc" id="L131">		cm.addRecipe(r1);</span>
+<span class="fc" id="L132">		assertEquals(35, cm.makeCoffee(r1, 35));</span>
+<span class="fc" id="L133">	}</span>
+	
+	public void testMakeCoffee3() {
+<span class="fc" id="L136">		cm.addRecipe(r5);</span>
+<span class="fc" id="L137">		assertEquals(55, cm.makeCoffee(r5, 55));</span>
+<span class="fc" id="L138">	}</span>
+	
+	public void testGetRecipeForName1() {
+<span class="fc" id="L141">		cm.addRecipe(r1);</span>
+		//cm.getRecipeForName(&quot;Coffee&quot;);
+<span class="fc" id="L143">		assertEquals(r1, cm.getRecipeForName(&quot;Coffee&quot;));</span>
+<span class="fc" id="L144">	}</span>
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>CoffeeMaker (Mar 19, 2017 8:59:33 PM)</div></body></html>
